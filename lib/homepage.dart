@@ -24,14 +24,9 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5.0),
-                // child:CustomButtonWidget(
-                //         Image:asset(images/asset/tent.jpg),
-                //         size: 100,
-                //         borderWidth:5,
-                //         onTap: () {
-
-                //         },
-                //       ),
+                child: Card(
+                  child: Image.asset("images/asset/tent.jpg"),
+                ),
               ),
             ],
           ),
