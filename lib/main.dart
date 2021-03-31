@@ -1,4 +1,4 @@
-import 'package:appone/homepage.dart';
+import 'package:appone/logo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,11 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Welcome to Career Guidence',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: Logo(),
     );
   }
 }

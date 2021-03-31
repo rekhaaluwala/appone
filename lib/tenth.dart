@@ -10,7 +10,7 @@ class _TenState extends State<Ten> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Avaliable courser"),
+        title: Text("Avaliable courses"),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,
@@ -25,12 +25,12 @@ class _TenState extends State<Ten> {
           ),
           Container(
             height: 50,
-            color: Colors.amber[500],
+            color: Colors.amber[100],
             child: const Center(child: Text('Courses offered by IIIT Basara')),
           ),
           Container(
             height: 50,
-            color: Colors.amber[100],
+            color: Colors.amber[600],
             child: const Center(
                 child: Text(
                     'Polytechnic Courses offered by State Board of Technical Education and Training, T.S.')),
@@ -44,7 +44,7 @@ class _TenState extends State<Ten> {
           ),
           Container(
             height: 50,
-            color: Colors.amber[100],
+            color: Colors.amber[600],
             child: const Center(
                 child: Text(
                     'Short Term courses offered by State Board of Technical Education and Training.')),
@@ -58,7 +58,7 @@ class _TenState extends State<Ten> {
           ),
           Container(
             height: 50,
-            color: Colors.amber[100],
+            color: Colors.amber[600],
             child: const Center(
                 child: Text(
                     'List of Technical Certificate courses offered by Board of Secondary Education(Director of Government Examination)')),
@@ -72,7 +72,7 @@ class _TenState extends State<Ten> {
           ),
           Container(
             height: 50,
-            color: Colors.amber[100],
+            color: Colors.amber[600],
             child: const Center(
                 child: Text(
                     'TOSS (TELANGANA OPEN SCHOOL SOCIETY) / APOSS (AP OPEN SCHOOL SOCIETY)')),
