@@ -1,3 +1,4 @@
+import 'package:appone/business.dart';
 import 'package:appone/degree.dart';
 import 'package:appone/inter.dart';
 import 'package:appone/tech.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: Text(
           'Welcome To Career Guidance',
-          style: TextStyle(color: Colors.red[900], fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
         ),
       ),
       body: GridView.count(
@@ -30,16 +31,10 @@ class _HomePageState extends State<HomePage> {
         primary: false,
         padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         children: <Widget>[
-          Container(
-            height: 250,
-            padding: const EdgeInsets.all(8),
-            child: Card(
-                child: Column(
+          Card(
+            color: Colors.blue[500],
+            child: Stack(
               children: <Widget>[
-                Expanded(
-                    child: Container(
-                  height: 200,
-                )),
                 Center(
                   child: CircleAvatar(
                     radius: 45,
@@ -51,12 +46,17 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Text("10th",
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
+                    "10th",
                     style: TextStyle(
                       color: Colors.yellow,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
-                    )),
+                    ),
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
@@ -67,10 +67,11 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ],
-            )),
+            ),
           ),
           Card(
-            child: Column(
+            color: Colors.green,
+            child: Stack(
               children: <Widget>[
                 Center(
                   child: CircleAvatar(
@@ -78,28 +79,22 @@ class _HomePageState extends State<HomePage> {
                     child: ClipOval(
                       child: Image.asset(
                         'assets/images/ten2.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
-
-                // Container(
-                //   child: BoxDecoration(
-                //     Image: Decoration(
-                //       Image.asset(
-                //         "assets/images/ten2.jpg",
-                //       ),
-                //     ),
-                //     BorderRadius: BorderRadius.all(Radius.circular(50)),
-                //   ),
-                // ),
-
-                Text("Intermediate",
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 40),
+                  child: Text(
+                    "Intermediate",
                     style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.yellow,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
-                    )),
+                    ),
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
@@ -112,152 +107,232 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            height: 250,
-            padding: const EdgeInsets.all(8),
-            child: Card(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                    child: CircleAvatar(
-                      radius: 45,
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/images/img2.jpg',
-                        ),
+          Card(
+            color: Colors.yellow[900],
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/img2.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  Text(
-                    'Degree',
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
+                    "Degree",
                     style: TextStyle(
+                      color: Colors.yellow,
                       fontSize: 20.0,
-                      color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Degree(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Degree(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
-          Container(
-            height: 250,
-            padding: const EdgeInsets.all(8),
-            child: Card(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                    child: CircleAvatar(
-                      radius: 45,
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/images/tec.jpg',
-                        ),
+          Card(
+            color: Colors.teal[400],
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tec.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  Text(
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
                     "B.Tech",
                     style: TextStyle(
+                      color: Colors.yellow,
                       fontSize: 20.0,
-                      color: Colors.blue[900],
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Tech(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Tech(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
-          Container(
-            height: 250,
-            padding: const EdgeInsets.all(8),
-            child: Card(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                    child: CircleAvatar(
-                      radius: 45,
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/images/pg.jpg',
-                        ),
+          Card(
+            color: Colors.white,
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/pg.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  Text(
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 70),
+                  child: Text(
                     "PG",
                     style: TextStyle(
+                      color: Colors.yellow,
                       fontSize: 20.0,
-                      color: Colors.red[900],
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Ten(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Tech(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
-          Container(
-            height: 250,
-            padding: const EdgeInsets.all(8),
-            child: Card(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                    child: CircleAvatar(
-                      radius: 45,
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/images/tech.jpg',
-                        ),
+          Card(
+            color: Colors.red[400],
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tech.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  Text(
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
                     "M.Tech",
                     style: TextStyle(
+                      color: Colors.yellow,
                       fontSize: 20.0,
-                      color: Colors.grey,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Tech2(),
-                        ),
-                      );
-                    },
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Tech2(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          Card(
+            color: Colors.pink[400],
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tent.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
+                    "Job",
+                    style: TextStyle(
+                      color: Colors.yellow,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Tech2(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          Card(
+            color: Colors.orange,
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 45,
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/pg.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 130, left: 60),
+                  child: Text(
+                    "Business",
+                    style: TextStyle(
+                      color: Colors.yellow,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Business(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
         ],
