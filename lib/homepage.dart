@@ -5,6 +5,7 @@ import 'package:appone/tech.dart';
 import 'package:appone/tech2.dart';
 import 'package:appone/tenth.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -286,12 +287,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Tech2(),
-                      ),
-                    );
+                  onTap: () async {
+                    const url = 'https://www.freejobalert.com/';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'could not launch url';
+                    }
                   },
                 ),
               ],
