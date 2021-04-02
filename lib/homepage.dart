@@ -211,12 +211,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Tech(),
-                      ),
-                    );
+                  onTap: () async {
+                    const url =
+                        'https://www.jagranjosh.com/careers/after-post-graduation-1528887448-1#:~:text=Moreover%2C%20Post%20Graduate%20students%20can,%2C%20Police%2C%20Medicine%20and%20Defence.';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'could not launch url';
+                    }
                   },
                 ),
               ],

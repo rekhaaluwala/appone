@@ -1,7 +1,7 @@
-import 'dart:ui';
-
-import 'package:appone/homepage.dart';
+import 'package:appone/home2.dart';
 import 'package:flutter/material.dart';
+import 'package:appone/menu.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Logo extends StatefulWidget {
   @override
@@ -16,19 +16,32 @@ class _LogoState extends State<Logo> {
         centerTitle: true,
         title: Text(
           'LoGo Page',
-          style: TextStyle(color: Colors.pinkAccent[400], fontSize: 30.0),
+          style: TextStyle(color: Colors.yellowAccent[400], fontSize: 30.0),
         ),
-        leading: GestureDetector(
-          onTap: () {},
-          child: Icon(
-            Icons.menu,
-          ),
-        ),
+        // leading: GestureDetector(
+        //   onTap: () {
+        //     Navigator.of(context).push(
+        //       MaterialPageRoute(builder: (context) {
+        //         return Menu();
+        //       }),
+        //     );
+        //   },
+        //   child: Icon(
+        //     Icons.menu,
+        //   ),
+        // ),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () async {
+                  const url = 'https://www.google.com/';
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'could not launch url';
+                  }
+                },
                 child: Icon(
                   Icons.search,
                   size: 26.0,
@@ -42,29 +55,8 @@ class _LogoState extends State<Logo> {
               )),
         ],
       ),
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ),
-            );
-          },
-          child: Card(
-            color: Colors.amber,
-            shadowColor: Colors.red[400],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Image.asset(
-              'assets/images/logo.jpg',
-              height: 500,
-              width: 500,
-            ),
-          ),
-        ),
-      ),
+      drawer: Menu(),
+      body: Home2(),
     );
   }
 }
