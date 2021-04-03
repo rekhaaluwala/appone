@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appone/feedback.dart';
-import 'package:appone/login.dart';
+//import 'package:appone/login.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -35,25 +35,25 @@ class _MenuState extends State<Menu> {
               ),
             ],
           ),
-          ListTile(
-            title: Text(
-              'Login',
-              style: TextStyle(color: Colors.orange, fontSize: 20.0),
-            ),
-            leading: Icon(
-              Icons.login,
-              color: Colors.black87,
-            ),
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return Login();
-                  },
-                ),
-              );
-            },
-          ),
+          // ListTile(
+          //   title: Text(
+          //     'Login',
+          //     style: TextStyle(color: Colors.orange, fontSize: 20.0),
+          //   ),
+          //   leading: Icon(
+          //     Icons.login,
+          //     color: Colors.black87,
+          //   ),
+          //   onTap: () {
+          //     Navigator.of(context).push(
+          //       MaterialPageRoute(
+          //         builder: (context) {
+          //           return Login();
+          //         },
+          //       ),
+          //     );
+          //   },
+          // ),
           ListTile(
             title: Text(
               'Home',

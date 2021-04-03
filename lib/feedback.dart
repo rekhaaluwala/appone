@@ -13,7 +13,7 @@ class _Feedback1State extends State<Feedback1> {
         centerTitle: true,
         title: Text(
           "Feedback Form",
-          style: TextStyle(color: Colors.yellowAccent[400], fontSize: 18.0),
+          style: TextStyle(color: Colors.yellow[400], fontSize: 20.0),
         ),
       ),
       body: Center(
@@ -42,7 +42,7 @@ class _Feedback1State extends State<Feedback1> {
                   'Submit',
                   style: TextStyle(
                     fontSize: 20.0,
-                    color: Colors.deepOrange[200],
+                    color: Colors.white,
                   ),
                 ),
                 onPressed: () {},

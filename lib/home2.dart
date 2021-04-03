@@ -11,6 +11,17 @@ class _Home2State extends State<Home2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Welcome to Logo Page",
+          style: TextStyle(
+              color: Colors.amber,
+              backgroundColor: Colors.green,
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Center(
         child: GestureDetector(
           onTap: () {

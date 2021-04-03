@@ -1,5 +1,7 @@
-import 'package:appone/logo.dart';
+import 'package:appone/login.dart';
 import 'package:flutter/material.dart';
+//import 'package:form_validator/login.dart';
+//import 'package:appone/formdesign.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Logo(),
+      home: Login(),
     );
   }
 }
